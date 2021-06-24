@@ -2,24 +2,6 @@
 # Python bytecode 3.8 (3413)
 # Decompiled from: Python 3.8.9 (tags/v3.8.9:a743f81, Apr  2 2021, 10:59:45) [MSC v.1928 32 bit (Intel)]
 # Embedded file name: wallhaven.py
-"""
-Instruction
-context:
-
-L.
-679
-16
-POP_BLOCK
-18
-LOAD_CONST
-True
-->                20
-RETURN_VALUE
-22_0
-COME_FROM_FINALLY
-0
-'0'
-"""
 import ctypes
 import os
 import random
@@ -640,40 +622,6 @@ class Config:
         self.exists = self._exists()
 
     def _exists(self):
-        """
-         --- This code section failed: ---
-
- L. 677         0  SETUP_FINALLY        22  'to 22'
-
- L. 678         2  LOAD_GLOBAL              open
-                4  LOAD_FAST                'self'
-                6  LOAD_ATTR                path
-                8  CALL_FUNCTION_1       1  ''
-               10  LOAD_METHOD              close
-               12  CALL_METHOD_0         0  ''
-               14  POP_TOP
-
- L. 679        16  POP_BLOCK
-               18  LOAD_CONST               True
-               20  RETURN_VALUE
-             22_0  COME_FROM_FINALLY     0  '0'
-
- L. 680        22  DUP_TOP
-               24  LOAD_GLOBAL              FileNotFoundError
-               26  COMPARE_OP               exception-match
-               28  POP_JUMP_IF_FALSE    42  'to 42'
-               30  POP_TOP
-               32  POP_TOP
-               34  POP_TOP
-
- L. 681        36  POP_EXCEPT
-               38  LOAD_CONST               False
-               40  RETURN_VALUE
-             42_0  COME_FROM            28  '28'
-               42  END_FINALLY
-
-Parse error at or near `RETURN_VALUE' instruction at offset 20
-        """
         return os.path.isfile(CONFIG_PATH)
 
     def get(self):
