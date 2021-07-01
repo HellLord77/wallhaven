@@ -187,8 +187,8 @@ def update_params_2(item_submenu):
 
 def update_params_3(item_submenu):
     submenu_items, id = get_param_submenu_items_id(item_submenu)[1:]
-    param = ''
     for submenu_item in submenu_items:
+        param = ''
         if submenu_item.IsChecked():
             dim = submenu_item.GetHelp()
             param += '{},'.format(dim)
@@ -543,7 +543,6 @@ class TaskBarIcon(wx.adv.TaskBarIcon):
                 pass
 
     def on_exit(self, _):
-        print('gg')
         self.save_config() if self.save_configuration.IsChecked() else os.remove(CONFIG_PATH) if os.path.isfile(
             CONFIG_PATH) else None
         remove_temp()
